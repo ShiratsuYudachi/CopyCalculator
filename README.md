@@ -1,5 +1,6 @@
 # CopyCalculator
 ctrl-c a formula, and ctrl-v the result
+
 How to use: run the code (maybe you need to install pyperclip first), type /lc or /listencliboard
 then it will automatically calculate anything you copied and output the result to clipboard.
 equal sign in the end will be ignored
