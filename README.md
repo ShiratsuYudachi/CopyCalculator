@@ -1,6 +1,8 @@
 # CopyCalculator
 ctrl-c a formula, and ctrl-v the result
 
+WARNING: STILL LOTS OF BUGS, DO NOT USE IN FORMAL SITUATION
+
 How to use: run the code (maybe you need to install pyperclip first), type /lc or /listencliboard
 
 then it will automatically calculate anything you copied and output the result to clipboard.
@@ -8,6 +10,8 @@ then it will automatically calculate anything you copied and output the result t
 equal sign in the end will be ignored
 
 support Equation of Microsoft Word
+
+警告：bug还很多，不要做正式用途
 
 运行（得先装pyperclip）之后输入/lc或者/listenclipboard
 
