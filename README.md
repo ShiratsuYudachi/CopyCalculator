@@ -13,12 +13,12 @@ support Equation of Microsoft Word
 
 警告：bug还很多，不要做正式用途
 
-运行（得先装pyperclip）之后输入/lc或者/listenclipboard
+运行（需要pyperclip）之后输入/lc或者/listenclipboard
 
-然后复制算式，粘贴出来就是结果
+复制算式，粘贴出来就是结果
 
 支持word文档的公式（不如说就是为了快速计算word的公式而写的）
 
 如果结尾是=会被吃掉
 
-还有其他功能但是懒得写了，注释里都有
+其他一些功能在注释里有写
