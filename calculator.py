@@ -13,6 +13,12 @@ def sin(x):
     return (math.sin(rad(x)))
 def tan(x):
     return (math.tan(rad(x)))
+def sec(x):
+    return (1/cos(x))
+def csc(x):
+    return (1/sin(x))
+def cot(x):
+    return (1/tan(x))
 def acos(x):
     return (deg(math.acos(x)))
 def asin(x):
@@ -35,6 +41,7 @@ letter = ['a','b','c']
 triangle_function_startwith = ['s','c','t','a']
 triangle_functions = ['sin','cos','tan']
 triangle_functions_arc = ['asin','acos','atan']
+triangle_functions_m2 = ['sec','csc','cot']
 plus_minus = ['+','-']
 autoreplace = True
 listenclipboard = False
@@ -156,6 +163,21 @@ while True:
                                                             inp_ls.insert(times+3+x,')')#补充关括号
                                                             break
                                                         x = x+1 
+                                            elif inp_ls[times]+inp_ls[times+1]+inp_ls[times+2] in triangle_functions_m2:#如果其与其后两个字符可以组成m2三角函数
+                                                #1print ('a1')
+                                                times = times + 2#跳过后两个字符判断
+                                                if inp_ls[times+1] != '(':#是否已存在括号
+                                                    inp_ls.insert(times+1,'(')#补充开括号
+                                                    x=0
+                                                    while True:
+                                                        if not inp_ls[times+2+x] in number_whitelist_trifunc:#如果三角函数后出现需要截断的运算符
+                                                            if x != 0:
+                                                                inp_ls.insert(times+2+x,')')#补充关括号
+                                                                break
+                                                        elif times+2+x >= len(inp_ls)-1:#如果是最后一位
+                                                            inp_ls.insert(times+3+x,')')#补充关括号
+                                                            break
+                                                        x = x+1 
                                             else:#添加乘号
                                                 #print ('e2')
                                                 #print('2added times for variable')
@@ -169,7 +191,7 @@ while True:
                                 #print ('g')
                                 if not inp_ls[times-1] in symbol:
                                     if not times == 0:
-                                        if not inp_ls[times-3]+inp_ls[times-2]+inp_ls[times-1] in triangle_functions:
+                                        if not (inp_ls[times-3]+inp_ls[times-2]+inp_ls[times-1] in triangle_functions or inp_ls[times-3]+inp_ls[times-2]+inp_ls[times-1] in triangle_functions_m2):
                                             #print ('h')
                                             #print('added times for parentheses')
                                             inp_ls.insert(times,'*')
